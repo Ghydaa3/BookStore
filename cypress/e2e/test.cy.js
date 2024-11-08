@@ -63,8 +63,8 @@ describe("Verify that the user can proceed to checkout from the cart", () => {
   it("checkout successfully", () => {
     cy.visit("https://bookcart.azurewebsites.net/");
 
+    cy.contains(".mat-mdc-card", "Harry Potter and the Goblet of Fire").find(".mdc-button__label").click();
     cy.contains(".mat-mdc-card", "City of Girls").find(".mdc-button__label").click();
-    cy.contains(".mat-mdc-card", "Before We Were Yours").find(".mdc-button__label").click();
 
     cy.get(".mdc-icon-button > .mat-mdc-button-touch-target").click();
     cy.get(":nth-child(3) > :nth-child(6)").click();
